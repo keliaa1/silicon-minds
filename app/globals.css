@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Navy, teal and mint drawn from logo.png. */
+  /* Navy, teal and mint drawn from logo.svg. */
   --ink: #193547;
   --fog: #d3e6e3;
   --paper: #f2f8f6;
@@ -64,6 +64,20 @@ body {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.98;
+  text-wrap: balance;
+}
+
+.hero-nav,
+.section-title {
+  font-family: var(--font-archivo), Arial, Helvetica, sans-serif;
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.section-title {
   text-wrap: balance;
 }
 
@@ -377,9 +391,7 @@ body {
   }
 
   .project-deck {
-    --w: clamp(96px, min(10.5vw, 27svh), 230px);
-    --fan-top: calc(50% - var(--h) * 0.72);
-    height: auto;
+    --w: clamp(140px, min(14.5vw, 27svh), 230px);
   }
 }
 
@@ -398,9 +410,6 @@ body {
     padding-block: clamp(20px, 4.5svh, 56px);
   }
 
-  .fit-section-last {
-    min-height: calc(100svh - 77px);
-  }
 }
 
 /* About */
@@ -442,9 +451,6 @@ body {
   max-width: 19ch;
   margin-top: 20px;
   font-size: clamp(1.9rem, 3.1vw, 3rem);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
@@ -512,29 +518,23 @@ body {
 /* Work */
 
 .work-copy {
-  padding: 56px 16px 40px;
+  padding-block: clamp(56px, 7vw, 96px) 24px;
+  text-align: center;
 }
 
-@media (min-width: 640px) {
-  .work-copy {
-    padding-inline: 32px;
-  }
+.work-copy > .label {
+  justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .work {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    min-height: 100svh;
-  }
+.work-description {
+  max-width: 52ch;
+  margin: 18px auto 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
 
-  .work-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: clamp(20px, 4.5svh, 56px);
-    padding-inline: max(48px, calc((100vw - 1440px) / 2 + 48px)) 40px;
-  }
+.work .project-deck {
+  background: transparent;
 }
 
 /* Project popup */

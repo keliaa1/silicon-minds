@@ -22,7 +22,6 @@ export function Hero() {
         <a href="#work">Work</a>
         <a href="#path">Path</a>
         <a href="#team">Team</a>
-        <a href="#join">Join</a>
       </nav>
 
       <a href="#about" className="hero-target" aria-label="Skip to About">

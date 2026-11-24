@@ -29,7 +29,6 @@ export function Footer() {
             <h2>About</h2>
             <a href="#about">Silicon Minds</a>
             <a href={conceptNote}>Concept note <span aria-hidden="true">↗</span></a>
-            <a href="#join">Get involved</a>
           </nav>
           <div className="footer-column footer-home">
             <h2>Our first home</h2>

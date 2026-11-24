@@ -185,11 +185,11 @@ export type TeamMember = {
 };
 
 export const team: TeamMember[] = [
-  { name: "Angelo", photo: "https://i.pravatar.cc/640?img=16" },
-  { name: "Alain Barsime", photo: "https://i.pravatar.cc/640?img=12" },
-  { name: "Bless TETA", photo: "https://i.pravatar.cc/640?img=59" },
-  { name: "DAN christian", photo: "https://i.pravatar.cc/640?img=51" },
-  { name: "Simbi Kelia KAYIRANGA", photo: "https://i.pravatar.cc/640?img=42" },
+  { name: "Angelo", photo: "/Nshuti Angelo Joseph.jpeg" },
+  { name: "Alain Barsime", photo: "/Alain Barsime.jpeg" },
+  { name: "Bless TETA", photo: "/Teta Angel Bless.jpeg" },
+  { name: "DAN christian", photo: "/Dan Christian.png" },
+  { name: "Simbi Kelia KAYIRANGA", photo: "/Simbi Kelia.jpeg" },
 ];
 
 export const partnerNeeds = [

@@ -9,10 +9,7 @@ import { TeamCarousel } from "./components/TeamCarousel";
 import {
   collaborators,
   growthSteps,
-  partnerNeeds,
   phases,
-  projectQuestions,
-  reviewCriteria,
 } from "./content";
 
 const shell = "mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12";
@@ -45,7 +42,7 @@ function About() {
       <div className={`${shell} about-layout`}>
         <div data-reveal="up" className="about-visual">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Silicon Minds logo: connected navy initials with teal accents"
             fill
             sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 44vw, 600px"
@@ -54,7 +51,7 @@ function About() {
         </div>
         <div className="about-copy">
           <p data-reveal="up" className="label about-tag">About us</p>
-          <h2 id="about-title" data-reveal="up" style={delay(80)} className="about-title">
+          <h2 id="about-title" data-reveal="up" style={delay(80)} className="section-title about-title">
             Learn together. Build with AI. Solve real problems.
           </h2>
           <p data-reveal="up" style={delay(150)} className="about-description">
@@ -91,7 +88,7 @@ function Problem() {
       <div className={`${shell} grid gap-10 lg:grid-cols-12 lg:items-center`}>
         <div className="lg:col-span-6">
           <SectionTag n="02">The problem</SectionTag>
-          <ScrambleTitle className={`display mt-5 ${titleMedium}`}>
+          <ScrambleTitle className={`section-title mt-5 ${titleMedium}`}>
             The challenge is not a lack of interest.
           </ScrambleTitle>
           <p data-reveal="up" style={delay(150)} className="mt-5 max-w-[56ch] leading-relaxed text-muted-light lg:text-lg">
@@ -124,42 +121,15 @@ function Problem() {
 }
 
 function Work() {
-  const pipeline = ["Student work", "Pilots", "Partnerships", "Products", "Commercial ventures"];
   return (
     <section id="work" className="work on-signal bg-signal">
-      <div className="work-copy">
+      <div className={`${shell} work-copy`}>
         <SectionTag n="03">The work</SectionTag>
-        <ScrambleTitle className={`display mt-4 ${titleMedium}`}>
+        <ScrambleTitle className={`section-title mt-4 ${titleMedium}`}>
           Problem first. Then the model.
         </ScrambleTitle>
-        <ol data-reveal="stagger" style={delay(150)} className="mt-4 lg:mt-[2.5svh]">
-          {projectQuestions.map((question, index) => (
-            <li key={question} className="flex items-baseline gap-3 border-t border-ink py-1.5">
-              <span className="label">{String(index + 1).padStart(2, "0")}</span>
-              <span className="font-bold leading-tight">{question}</span>
-            </li>
-          ))}
-        </ol>
-        <div data-reveal="stagger" style={delay(250)} className="mt-4 grid grid-cols-2 gap-6 lg:mt-[2.5svh]">
-          <div>
-            <h3 className="label border-t border-ink pt-2">Evaluated on</h3>
-            <ul className="mt-2 text-sm font-medium leading-snug">
-              {reviewCriteria.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="label border-t border-ink pt-2">Where projects can go</h3>
-            <p className="mt-2 text-sm font-medium leading-snug">{pipeline.join(" → ")}</p>
-            <p className="mt-1.5 text-xs leading-snug">
-              Commercial work, including ownership and how benefits are shared, is agreed
-              openly with RCA.
-            </p>
-          </div>
-        </div>
-        <p data-reveal="fade" style={delay(400)} className="label mt-4 lg:mt-[2.5svh]">
-          Sample projects until the first demo day. Select a card for the full brief.
+        <p data-reveal="up" style={delay(150)} className="work-description">
+          Student ideas for real-world problems. Explore a sample project to see how it could work.
         </p>
       </div>
       <ProjectDeck />
@@ -173,7 +143,7 @@ function Path() {
       <div className={`${shell} grid gap-10 lg:grid-cols-2 lg:gap-14`}>
         <div>
           <SectionTag n="04">At RCA</SectionTag>
-          <ScrambleTitle className={`display mt-4 ${titleCompact}`}>Five phases at RCA.</ScrambleTitle>
+          <ScrambleTitle className={`section-title mt-4 ${titleCompact}`}>Five phases at RCA.</ScrambleTitle>
           <ol data-reveal="stagger" style={delay(150)} className="mt-4 border-t border-ink">
             {phases.map((phase, index) => (
               <li key={phase.title} className="grid grid-cols-[28px_1fr] gap-x-2 border-b border-ink py-1.5 xl:grid-cols-[28px_190px_1fr]">
@@ -191,7 +161,7 @@ function Path() {
         </div>
         <div>
           <SectionTag n="05">Beyond RCA</SectionTag>
-          <ScrambleTitle className={`display mt-4 ${titleCompact}`}>Then, a national network.</ScrambleTitle>
+          <ScrambleTitle className={`section-title mt-4 ${titleCompact}`}>Then, a national network.</ScrambleTitle>
           <ol data-reveal="stagger" style={delay(150)} className="mt-4 border-t border-ink">
             {growthSteps.map((step, index) => (
               <li key={step.title} className="grid grid-cols-[28px_1fr] gap-x-2 border-b border-ink py-1.5 xl:grid-cols-[28px_190px_1fr]">
@@ -223,45 +193,12 @@ function Team() {
     <section id="team" className="fit-section overflow-hidden bg-paper">
       <div className={shell}>
         <p data-reveal="up" className="label flex justify-center"><span>06 — The team</span></p>
-        <ScrambleTitle className={`display mt-3 text-center ${titleMedium}`}>
+        <ScrambleTitle className={`section-title mt-3 text-center ${titleMedium}`}>
           Meet the Silicon Minds
         </ScrambleTitle>
       </div>
       <div data-reveal="up" style={delay(150)}>
         <TeamCarousel />
-      </div>
-    </section>
-  );
-}
-
-function Join() {
-  return (
-    <section id="join" className="fit-section fit-section-last bg-ink text-paper">
-      <div className={`${shell} grid gap-10 lg:grid-cols-12`}>
-        <div className="lg:col-span-5">
-          <SectionTag n="07">Join</SectionTag>
-          <ScrambleTitle className={`display mt-5 ${titleMedium}`}>Get involved.</ScrambleTitle>
-          <p data-reveal="up" style={delay(150)} className="mt-5 leading-relaxed lg:text-lg">
-            <strong className="font-bold">RCA students:</strong> the membership process
-            is being set up during the establishment phase. Once it opens, students can
-            join at their own pace.
-          </p>
-        </div>
-        <div className="lg:col-span-6 lg:col-start-7">
-          <p className="font-bold lg:text-lg">Partners and sponsors can help with:</p>
-          <ul data-reveal="stagger" style={delay(200)} className="mt-3">
-            {partnerNeeds.map((need) => (
-              <li key={need} className="border-t border-paper/30 py-2.5 leading-snug text-muted-dark">{need}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className={`${shell} mt-10 lg:mt-[8svh]`}>
-        <p className="display text-[clamp(1.75rem,min(4.6vw,9svh),4.5rem)]">
-          <span data-reveal="wipe" className="inline-block">Its first responsibility is learning.</span>
-          <br />
-          <span data-reveal="wipe" style={delay(250)} className="inline-block text-signal">Its first home is RCA.</span>
-        </p>
       </div>
     </section>
   );
@@ -276,7 +213,6 @@ export default function Home() {
       <Work />
       <Path />
       <Team />
-      <Join />
       <Footer />
       <RevealObserver />
     </main>
